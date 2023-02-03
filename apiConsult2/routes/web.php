@@ -20,9 +20,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/visits', [queryController::class, 'visitsQuery']);
+Route::get('/visitsQuery', [queryController::class, 'visitsQuery']);
 
 Route::get('/databaseQuery', [Controller::class, 'databaseQuery']);
+
+Route::get('/visits', [Controller::class, 'visits']);
 
 Route::get('/validateConnection', [Controller::class, 'validateConnection']);
 

@@ -35,8 +35,16 @@ class Controller extends BaseController
     }
     
     public function databaseQuery(){
-        $products = DB::table('stations')->get();
+        $products = DB::table('visits')->get();
         // $products = "jaskd";
         return $products;
+    }
+    public function visits(){
+        //en esta variable se guardarian los datos extraidos de la base de datos
+        // $visits = $this->databaseQuery();
+        $visitsIp = [
+            '197.168.0.1','197.168.0.2','197.168.0.3','197.168.0.4','197.168.0.5'
+        ];
+        return view('buscador',['visitsIp' => $visitsIp]);
     }
 }
