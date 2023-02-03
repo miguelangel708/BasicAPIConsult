@@ -3,6 +3,7 @@
 use App\Http\Controllers\ConsultControllers;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\queryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,9 +19,10 @@ use App\Http\Controllers\Controller;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/hola', function () {
-    return ('welcome madafaka');
-});
+
+Route::get('/visits', [queryController::class, 'visitsQuery']);
 
 Route::get('/databaseQuery', [Controller::class, 'databaseQuery']);
+
+Route::get('/validateConnection', [Controller::class, 'validateConnection']);
 
